@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-## My Capstone project
+## MyAwsomeBook
 
 >  In this project, I will build a conference page with html, scss and javascript.
 
