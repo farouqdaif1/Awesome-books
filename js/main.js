@@ -26,5 +26,5 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   // remove book from the UI
   UI.deletBook(e.target);
   // remove book from local storage
-  Store.removeBooks(e.target.previousElementSibling.textContent);
+  Store.removeBooks(e.target.previousElementSibling.previousElementSibling.textContent);
 });

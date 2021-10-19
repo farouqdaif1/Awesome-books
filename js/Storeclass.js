@@ -19,10 +19,10 @@ export default class Store {
   }
 
   // remove books
-  static removeBooks(bookAuthor) {
+  static removeBooks(booktitle) {
     const books = Store.getBooks();
     books.forEach((book, index) => {
-      if (book.Author === bookAuthor) {
+      if (book.title === booktitle) {
         books.splice(index, 1);
       }
     });
