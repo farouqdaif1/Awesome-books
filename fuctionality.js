@@ -1,47 +1,50 @@
-// Array to store the data objects
-const colliction = [];
-const div = document.querySelector('.collection');
-const Submit = document.querySelector('#do');
-// function to catch the data from input field
-function Setlocalstorage() {
-  const Author = document.querySelector('#author');
-  const Title = document.querySelector('#title');
-  localStorage.setItem('Authors', Author.value);
-  localStorage.setItem('titles', Title.value);
-}
-// function to but the data inside the Array
-function SetDataColl() {
-  const Aut = localStorage.getItem('Authors');
-  const ti = localStorage.getItem('titles');
-  const data = { name: Aut, book: ti };
-  colliction.push(data);
+const divbooks = document.querySelector('.books');
+const inputTitle = document.querySelector('#title');
+const inputAuthor = document.querySelector('#author');
+const addBtn = document.querySelector('#add');
+
+const savedData = localStorage.getItem('savedInput');
+
+let collection = [];
+
+if (savedData && savedData !== null) {
+  collection = JSON.parse(savedData);
 }
 
-// function to display the content
-function display() {
-  div.innerHTML = '';
-  for (let i = 0; i < colliction.length; i + 1) {
-    div.innerHTML += `
-    <div class=data>
-    <p>${colliction[i].book}</p>
-    <p>${colliction[i].name}</p>
-    <button  onclick="remove(${i});">Remove</button>
-    <hr>
-    </div>`;
-  }
-}
-function remove(index) {
-  if (colliction.length > 0) {
-    colliction.splice(index, 1);
-    display();
-  }
-}
-display();
-remove();
+const displayData = () => {
+  divbooks.innerHTML = '';
+  collection.forEach((value, index) => {
+    divbooks.innerHTML += `
+            <div class="books">
+            <ul>
+                <li class="title">${value.name}</li>
+                <li class="author">${value.author}</li>
+            </ul>
+             <button id="remove" onclick="removeBook(${index});">remove</button>
+             <hr>
+           </div>`;
+  });
+};
 
-Submit.addEventListener('click', (e) => {
+displayData();
+const saveData = () => localStorage.setItem('savedInput', JSON.stringify(collection));
+const removeBook = (index) => {
+  if (index !== null && index !== undefined) {
+    collection.splice(index, 1);
+    saveData();
+    displayData();
+  }
+};
+
+removeBook();
+
+addBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  Setlocalstorage();
-  SetDataColl();
-  display();
+  const newData = {
+    name: inputTitle.value,
+    author: inputAuthor.value,
+  };
+  collection.push(newData);
+  saveData();
+  displayData();
 });
