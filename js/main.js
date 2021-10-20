@@ -23,8 +23,9 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
 // Event :Remove a book
 document.querySelector('#book-list').addEventListener('click', (e) => {
+  // remove book from local storage
+  Store.removeBooks(e.target.id);
   // remove book from the UI
   UI.deletBook(e.target);
-  // remove book from local storage
-  Store.removeBooks(e.target.previousElementSibling.previousElementSibling.textContent);
+  // Store.removeBooks(e.target.previousElementSibling.previousElementSibling.textContent);
 });

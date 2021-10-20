@@ -1,6 +1,7 @@
 // UI class : Handel UI task
 import Store from './Storeclass.js';
 
+let z = 0;
 export default class UI {
   // Display Book
   static DisplayBook() {
@@ -14,7 +15,7 @@ export default class UI {
     const div = document.createElement('div');
     div.innerHTML = `<p>${book.title}</p>
     <p>${book.Author}</p>
-    <button class="delete">Remove</button>
+    <button id="x${z += 1}" class="delete">Remove</button>
     <hr>
     <br>`;
     list.appendChild(div);
@@ -25,6 +26,7 @@ export default class UI {
     if (el.classList.contains('delete')) {
       el.parentElement.remove();
     }
+    z -= 1;
   }
 
   // clear field
