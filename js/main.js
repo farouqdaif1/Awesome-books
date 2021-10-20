@@ -14,11 +14,15 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   // instansiate book
   const book = new Book(title, author);
   //   Add book to UI
-  UI.addBookToList(book);
-  // Add book to  local sorage
-  Store.addBooks(book);
-  // clear field
-  UI.clear();
+  if (book.Author.length > 0 && book.title.length > 0) {
+    UI.addBookToList(book);
+    // Add book to  local sorage
+    Store.addBooks(book);
+    // clear field
+    UI.clear();
+  } else {
+    alert('please fill all the inputs');
+  }
 });
 
 // Event :Remove a book

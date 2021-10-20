@@ -13,10 +13,13 @@ export default class UI {
   static addBookToList(book) {
     const list = document.querySelector('#book-list');
     const div = document.createElement('div');
-    div.innerHTML = `<p>${book.title}</p>
-    <p>${book.Author}</p>
+    div.innerHTML = `
+    <div>
+    <p class="title">${book.title}</p>
+    <p class="by">by</p>
+    <p class="author">${book.Author}</p>
+    </div>
     <button id="x${z += 1}" class="delete">Remove</button>
-    <hr>
     <br>`;
     list.appendChild(div);
   }
