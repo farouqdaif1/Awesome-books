@@ -5,16 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+     <script
+     src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.0.2/luxon.min.js"
+     integrity="sha512-frUCURIeB0OKMPgmDEwT3rC4NH2a4gn06N3Iw6T1z0WfrQZd7gNfJFbHrNsZP38PVXOp6nUiFtBqVvmCj+ARhw=="
+     crossorigin="anonymous"
+     referrerpolicy="no-referrer"
+   ></script>
+     <title>Document</title>
 </head>
 <body>
     <header>
-        <h1>Awesome books</h1>
+        <nav>
+            <div class="nav-mob">
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+                <div class="nav-ul ">
+                    <div id="close">      
+                    <button type="button" class="close-btn">
+                    &times;
+                    </button>
+                    </div>
+                    <div class="to-ul">
+                        <ul class="menu" >
+                        <li><a class="b-list" href="#book-list">List</a></li>
+                        <li><a class="A-list" href="#book-form">Add new</a></li>
+                        <li><a class="c-list" href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="div"></div>
+                </div> 
+            </div>
+        <div class="nav-disk">
+            <div class="logo">
+              <a>Awsome book</a>
+            </div>
+                <div class="nav-ul1">
+                    <div class="to-ul1">
+                        <ul class="menu" >
+                        <li><a class="b-list1" href="#book-list">List|</a></li>
+                        <li><a class="A-list1" href="#book-form">Add new|</a></li>
+                        <li><a class="c-list1" href="#contact">Contact|</a></li>
+                        </ul>
+                    </div>
+                    <div class="div"></div>
+                </div> 
+            </div>
+        </nav>
     </header>
+    <h5 class="date"></h5>
     <main id="main">
-       <div id="book-list">
+        <h1 class="m1">Awesome books</h1>
+       <div class="ls-b" id="book-list">
+        <h1 class="m2">My Awosme book </h1>
        </div> 
-       <form  id="book-form" action="#">
+       <form class="form-b" id="book-form" action="#">
            <input id="title" type="text" placeholder="Title">
            <br>
            <br>
@@ -23,6 +70,20 @@
            <br>
            <button id="add" type="submit">Add</button>
        </form>
+       <section class="contact_info">
+        <h2>Contact information</h2>
+        <p class="questions">
+          Do you have any questions or you just want to say "Hello"? You can
+          reach out to us!
+        </p>
+        <ul class="contacts ">
+          <li class="list-contact">Our e-mail: daiffarouq@gmail.com</li>
+          <li class="list-contact">Our Phone: number:+201021246070</li>
+          <li class="list-contact">
+            Our address: Damnhour,Egypt.
+          </li>
+        </ul>
+      </section>
     </main>
     <script type="module" src="./js/main.js"></script>
 
