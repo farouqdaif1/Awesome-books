@@ -19,13 +19,16 @@ export default class Store {
   }
 
   // remove books
-  static removeBooks(booktitle) {
+  static removeBooks(id) {
+    const item = document.getElementById(`${id}`);
+    const btn = document.querySelectorAll('.delete');
     const books = Store.getBooks();
-    books.forEach((book, index) => {
-      if (book.title === booktitle) {
+    btn.forEach((book, index) => {
+      if (book.id === item.id) {
         books.splice(index, 1);
+        localStorage.setItem('books', JSON.stringify(books));
+        index -= 1;
       }
     });
-    localStorage.setItem('books', JSON.stringify(books));
   }
 }
