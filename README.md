@@ -2,13 +2,12 @@
 
 ## MyAwsomeBook
 
->  In this project, I will build a conference page with html, scss and javascript.
+>  In this project, add and remove books using javascript objects
 
-![screenshot]()
 
 ## To get a local copy up and running follow these simple example steps.
 > Open the terminal
-- Run git clonehttps://github.com/farouqdaif1/capstone1.git
+- Run git clonehttps://github.com/farouqdaif1/Awesome-books.git
 - Then run git checkout Add-toolbar-and-headline
 - Now you can open the index.html file in your browser
 
@@ -20,8 +19,7 @@
 - Technologies used :GIT and GitHup 
 
 ## To see the Project
-click the link:https://farouqdaif1.github.io/capstone1/
-
+click the link:https://farouqdaif1.github.io/Awesome-books/
 ## Authors
 
 👤 **Author1**
